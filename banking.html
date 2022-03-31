@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="mx-auto w-3/4">
+        <h1 class="text-5xl text-center mt-5 font-semibold">Banking Site</h1>
+        <a href="index.html" class="text-3xl text-right">Logout</a>
+    </header>
+    <main class="w-3/4 mx-auto hidden" id="display-section">
+        <section class="my-8">
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-blue-400 p-8 rounded text-white font-semibold">
+                   <h3 class="text-3xl">Deposite</h3> 
+                   <h4 class="text-4xl">$<span id="deposite-display">00</span></h4>
+                </div>
+                <div class="bg-green-300 p-8 rounded text-white font-semibold">
+                   <h3 class="text-3xl">Withdraw</h3> 
+                   <h4 class="text-4xl" >$<span id="withdraw-display">00</span></h4>
+                </div>
+                <div class="bg-yellow-300 p-8 rounded text-white font-semibold">
+                   <h3 class="text-3xl">Balance</h3> 
+                   <h4 class="text-4xl">$<span id="balance">1200</span></h4>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <!-- Deposite Area -->
+            <div class="grid md:grid-cols-2 gap-3">
+                <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded p-8">
+                    <h3 class="text-3xl">Deposite Your Money</h3>
+                    <input class="border-emerald-300 border-2 my-3 rounded w-3/4 px-3 py-4" type="number" name="deposit" id="deposit" placeholder="Amount You Want To Deposite">
+                    <span class="font-bold hidden text-indigo-600" id="deposit-warning">Please input a number</span>
+                    <input id="btn-deposit" type="button" value="Submit" class="px-3 py-2 bg-lime-200 hover:bg-lime-600 active:bg-lime-700 focus:outline-none focus:ring focus:ring-lime-300 rounded font-semibold cursor-pointer block">
+                </div>
+
+                <!-- Withdraw Area -->
+                <div class="bg-gradient-to-r from-green-400 to-blue-500 rounded p-8">
+                    <h3 class="text-3xl">Withdraw From Account</h3>
+                    <input class="border-emerald-300 border-2 my-3 rounded w-3/4 px-3 py-4"" type="number" name="withdraw" id="withdraw" placeholder="Amount You Want To Withdraw">
+                    <span class="font-bold hidden text-red-600" id="withdraw-warning">Please input a number</span>
+                    <input id="btn-withdraw" type="button" value="Withdraw" class="block px-3 py-2 bg-lime-200 rounded font-semibold bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 cursor-pointer">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="transaction.js"></script>
+</body>
+</html>

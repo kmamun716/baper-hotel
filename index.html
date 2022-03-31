@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baper Hotel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <h1 class="text-5xl text-center mt-5 font-semibold">Welcome To My <span class="text-lime-600 font-bold">Baper Hotel</span></h1>
+    </header>
+
+    <!-- Login Area -->
+    <section class="w-3/4 mx-auto mt-5 bg-green-200 px-5 py-2 rounded">
+        <h2 class="text-3xl mb-5">Login Here</h2>
+        <form action="">
+            <input class="border-emerald-300 border-2 rounded block w-3/4 px-3" type="text" name="email" id="email" placeholder="Your Email">
+            <input class="border-emerald-300 border-2 my-3 rounded block w-3/4 px-3"" type="password" name="password" id="password" placeholder="password">
+            <input id="btn-submit" type="button" value="Login" class="px-3 py-2 bg-lime-200 rounded font-semibold cursor-pointer"> <span class="font-bold text-red-600 ml-5 hidden" id="warning-login">Please Input Right Data From Bellow</span>
+        </form>
+    </section>
+    
+    <div class="w-3/4 mx-auto mt-5 bg-blue-200 px-5 py-2 rounded">
+        <h5 class="text-5xl text-center">Please Input This Carefully</h5>
+        <p class="my-5 text-2xl">input on email : <input type="text" class="pl-2" value="amar@baperhotel.com"></p>
+        <p class="mb-5 text-2xl">input on password : <input type="text" class="pl-2" value="pass123"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
