@@ -17,15 +17,21 @@ depositeBtn.addEventListener("click",function(){
     const depositAmount = parseInt(deposit.value);
     const balanceAmount = parseInt(balance.innerText);
     if(!deposit.value.length){
-        document.getElementById("deposit-warning").style.display= "inline-block";        
+        document.getElementById("deposit-warning").innerText="Please input a number";
+        document.getElementById("deposit-warning").style.display= "block";        
     } else {
         document.getElementById("deposit-warning").style.display="none";
-        const newAmount = balanceAmount + depositAmount;
-        balance.innerText = newAmount;
-        const depositeDisplayAmount = parseInt(depositeDisplay.innerText);
-        const newDeposit = depositeDisplayAmount + depositAmount;
-        depositeDisplay.innerText = newDeposit;
-        deposit.value="";
+        if(depositAmount>0){
+            const newAmount = balanceAmount + depositAmount;
+            balance.innerText = newAmount;
+            const depositeDisplayAmount = parseInt(depositeDisplay.innerText);
+            const newDeposit = depositeDisplayAmount + depositAmount;
+            depositeDisplay.innerText = newDeposit;
+            deposit.value="";
+        }else{
+            document.getElementById("deposit-warning").innerText="You Can't deposit zero or negative amount";
+            document.getElementById("deposit-warning").style.display= "block";
+        }
     }
 });
 
@@ -36,12 +42,18 @@ withdrawBtn.addEventListener("click",()=>{
     const balanceAmount = parseInt(balance.innerText);
     if(withdraw.value.length){
         const newAmount = balanceAmount - withdrawAmount;
+       if(newAmount>=0){
         balance.innerText = newAmount;
         const withdrawDisplayAmount = parseInt(withdrawDisplay.innerText);
         const newDeposit = withdrawDisplayAmount + withdrawAmount;
         withdrawDisplay.innerText = newDeposit;
-        withdraw.value="";
+       } else {
+        document.getElementById("withdraw-warning").innerText="You Can't Withdraw More Then You Deposit";
+        document.getElementById("withdraw-warning").style.display= "block";
+       }
+       withdraw.value="";
     } else {
-        document.getElementById("withdraw-warning").style.display= "inline-block";
+        document.getElementById("withdraw-warning").innerText="Please input a number";
+        document.getElementById("withdraw-warning").style.display= "block";
     }
 })
